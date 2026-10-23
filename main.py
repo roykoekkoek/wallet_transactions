@@ -47,8 +47,9 @@ def get_all_transactions(token: str):
                 "recordDate": t.get("recordDate"),
                 "amount": (t.get("amount") or {}).get("value"),
                 "category": (t.get("category") or {}).get("name"),
+                "categoryGroup": ((t.get("category") or {}).get("group") or {}).get("name"),
                 "accountId": t.get("accountId"),
-                "accountName": t.get("accountName")
+                "accountName": t.get("accountName"),
             }
         )
 
